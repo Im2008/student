@@ -70,6 +70,7 @@ type: hacks
         background-color: #FFF;
         color: #000;
     }
+    
 </style>
 
 
@@ -331,10 +332,12 @@ type: hacks
         }
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-        let activeDot = function(x, y){
-            ctx.fillStyle = "#FFFFFF";
-            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+
+        let appleDot = function(x, y){
+            ctx.font = 12px Arial;
+            ctx.fillText(“:apple:”, x * BLOCK, y * BLOCK);
         }
+
         /* Random food placement */
         /////////////////////////////////////////////////////////////
         let addFood = function(){
