@@ -269,7 +269,7 @@ type: hacks
                 snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                 altScore(++score);
                 addFood();
-                activeDot(food.x, food.y);
+                addFood(food.x, food.y);
             }
             // Repaint canvas
             ctx.beginPath();
@@ -277,10 +277,10 @@ type: hacks
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                activeDot(snake[i].x, snake[i].y);
+                addFood(snake[i].x, snake[i].y);
             }
             // Paint food
-            activeDot(food.x, food.y);
+            addFood(food.x, food.y);
             // Debug
             //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
             // Recursive call after speed delay, déjà vu
@@ -334,7 +334,7 @@ type: hacks
         /////////////////////////////////////////////////////////////
 
         let appleDot = function(x, y){
-            ctx.font = 12px Arial;
+            ctx.font = 12px Arial; 
             ctx.fillText(“:apple:”, x * BLOCK, y * BLOCK);
         }
 
@@ -349,6 +349,8 @@ type: hacks
                 }
             }
         }
+
+        
         /* Collision Detection */
         /////////////////////////////////////////////////////////////
         let checkBlock = function(x, y, _x, _y){
