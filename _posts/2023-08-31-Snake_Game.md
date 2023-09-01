@@ -335,8 +335,10 @@ type: hacks
 
         let appleDot = function(x, y){
             ctx.font = '12px Arial'; 
-            ctx.fillText(":apple:", x * BLOCK, y * BLOCK);
+            ctx.fillText("\u{1F604}", x * BLOCK, y * BLOCK);
         }
+
+        var >
 
         /* Random food placement */
         /////////////////////////////////////////////////////////////
