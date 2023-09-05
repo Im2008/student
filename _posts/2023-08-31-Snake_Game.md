@@ -70,7 +70,6 @@ type: hacks
         background-color: #FFF;
         color: #000;
     }
-    
 </style>
 
 
@@ -189,7 +188,7 @@ type: hacks
             button_setting_menu.onclick = function(){showScreen(SCREEN_SETTING);};
             button_setting_menu1.onclick = function(){showScreen(SCREEN_SETTING);};
             // speed
-            setSnakeSpeed(150);
+            setSnakeSpeed(1000);
             for(let i = 0; i < speed_setting.length; i++){
                 speed_setting[i].addEventListener("click", function(){
                     for(let i = 0; i < speed_setting.length; i++){
@@ -269,7 +268,7 @@ type: hacks
                 snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                 altScore(++score);
                 addFood();
-                addFood(food.x, food.y);
+                activeDot(food.x, food.y);
             }
             // Repaint canvas
             ctx.beginPath();
@@ -277,10 +276,10 @@ type: hacks
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                addFood(snake[i].x, snake[i].y);
+                activeDot(snake[i].x, snake[i].y);
             }
             // Paint food
-            addFood(food.x, food.y);
+            activeDot(food.x, food.y);
             // Debug
             //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
             // Recursive call after speed delay, déjà vu
@@ -332,14 +331,10 @@ type: hacks
         }
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-
-        let appleDot = function(x, y){
-            ctx.font = '12px Arial'; 
-            ctx.fillText("\u{1F604}", x * BLOCK, y * BLOCK);
+        let activeDot = function(x, y){
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
-
-        var >
-
         /* Random food placement */
         /////////////////////////////////////////////////////////////
         let addFood = function(){
@@ -351,8 +346,6 @@ type: hacks
                 }
             }
         }
-
-        
         /* Collision Detection */
         /////////////////////////////////////////////////////////////
         let checkBlock = function(x, y, _x, _y){
