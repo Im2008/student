@@ -188,7 +188,7 @@ type: hacks
             button_setting_menu.onclick = function(){showScreen(SCREEN_SETTING);};
             button_setting_menu1.onclick = function(){showScreen(SCREEN_SETTING);};
             // speed
-            setSnakeSpeed(1000);
+            setSnakeSpeed(150);
             for(let i = 0; i < speed_setting.length; i++){
                 speed_setting[i].addEventListener("click", function(){
                     for(let i = 0; i < speed_setting.length; i++){
@@ -268,7 +268,7 @@ type: hacks
                 snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                 altScore(++score);
                 addFood();
-                appleDot(food.x, food.y);
+                activeDot(food.x, food.y);
             }
             // Repaint canvas
             ctx.beginPath();
@@ -276,10 +276,10 @@ type: hacks
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                appleDot(snake[i].x, snake[i].y);
+                activeDot(snake[i].x, snake[i].y);
             }
             // Paint food
-            appleDot(food.x, food.y);
+            activeDot(food.x, food.y);
             // Debug
             //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
             // Recursive call after speed delay, déjà vu
@@ -301,7 +301,7 @@ type: hacks
             // food on canvas
             addFood();
             // activate canvas event
-            screen_snake.onkeydown = function(evt) {
+            canvas.onkeydown = function(evt) {
                 changeDir(evt.keyCode);
             }
             mainLoop();
@@ -331,10 +331,12 @@ type: hacks
         }
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-        let appleDot = function(x, y){
-            ctx.font = "16px Arial"; // Adjust the font size here (e.g., 10px, 12px)
-            ctx.fillText(“:apple:”, x * BLOCK, y * BLOCK);
+        
+        let activeDot = function(x, y){
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
+
         /* Random food placement */
         /////////////////////////////////////////////////////////////
         let addFood = function(){
