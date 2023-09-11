@@ -3,7 +3,7 @@ toc: true
 comments: false
 layout: post
 title: Snake Game
-description: This is the snake game
+description: A snake game that gives a control to a snake with a "wasd" keys and by default "arrow keys." The snake, or the large rectangle is trying to eat the apples or the small squares in order to get bigger. The game ends once the snake hits a wall or itself, or if you get too big.
 courses: {'csse': {'week': 2} }
 type: hacks
 ---

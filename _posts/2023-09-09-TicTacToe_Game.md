@@ -3,7 +3,7 @@ toc: True
 comments: True
 layout: post
 title: Tic Tac Toe Game
-description:
+description: This Tic Tac Toe Game is a game that allows there to be multiple players. When you click on a box, if you're an "x" you're going second and if you're an "o", you're going first. The goal of the game is to get 3 straight in a row.
 courses: {'csse': {'week': 3} }
 type: hacks
 ---
