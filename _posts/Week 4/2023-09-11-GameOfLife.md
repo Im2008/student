@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Game Of Life
 description: The game of life is a randomly generated game where black squares are implemented on a white base where it'll keep spreading or decreasing depending on random chance.
-courses: {'csse': {'week': 2} }
+courses: {'csse': {'week': 4} }
 type: hacks
 ---
 
