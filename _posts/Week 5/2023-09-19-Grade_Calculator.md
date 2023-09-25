@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title: GPA calculator
+title: Grade calculator
 description: The GPA calculator helps calculate the overall grade of a single student that depends on the grades of other classes.
 courses: {'csse': {'week': 5} }
 type: hacks
@@ -10,7 +10,7 @@ type: hacks
 
 <html>
 <head>
-    <title>GPA calculator</title>
+    <title>Grade calculator</title>
 </head>
 <body>
     <!-- Help Message -->
@@ -28,6 +28,9 @@ type: hacks
     (D-) = 1.0 <br>
     (F) = 0.0 <!--It's 0.00001, however, the calculator won't count the letter if it's directly equal to 0. --><br>
     </p>
+    <h3>Numbers and letters are scaled between 0-4 along with decimals, however doesn't work with percentages and fractions</h3>
+    <br>
+    <br>
     <!-- Instructions -->
     <h2>Please put a letter in the box, or a number between 0 and 4, and it’ll calculate it based on the key above.</h2>
     <!-- Totals -->
