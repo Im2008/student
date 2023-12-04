@@ -1,9 +1,9 @@
 title: Mario Modifying Adventures!
 description: "November 2023 to March 2024"
-owner_name: Trystan Schmits
-github_username: Trystan-Schmits
-github_repo: "MiniProject"
-baseurl: "/MiniProject"
+owner_name: Ian Manangan
+github_username: Im2008
+github_repo: "student"
+baseurl: "/student"
 future: true
 remote_theme: jekyll/minima
 minima:
